@@ -42,10 +42,10 @@ public class WorkerService : IWorkerService
     {
         var existingWorker = await _repository.Set<WorkerEntity>()
             .AsNoTracking()
-            .AnyAsync(i => i.FirstName == vm.FirstName && i.LastName == vm.LastName);
+            .AnyAsync(i => i.EmailAddress == vm.EmailAddress);
 
         if (existingWorker)
-            throw new EntityDuplicateException("A worker with the specified name already exists.");
+            throw new EntityDuplicateException("A worker with the specified email address already exists.");
 
         var worker = _mapper.Map<WorkerEntity>(vm);
         _repository.Add(worker);
@@ -62,10 +62,10 @@ public class WorkerService : IWorkerService
             throw new EntityNotFoundException("Worker not found.");
 
         var existingNames = await _repository.Set<WorkerEntity>()
-            .AnyAsync(i => i.FirstName == vm.FirstName && i.LastName == vm.LastName && i.Id != id);
+            .AnyAsync(i => i.EmailAddress == vm.EmailAddress && i.Id != id);
 
         if (existingNames)
-            throw new EntityDuplicateException("A worker with the specified name already exists.");
+            throw new EntityDuplicateException("A worker with the specified email address already exists.");
 
         _mapper.Map(vm, worker);
         await _repository.SaveChangesAsync();

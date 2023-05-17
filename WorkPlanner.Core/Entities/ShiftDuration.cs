@@ -1,4 +1,5 @@
-﻿namespace WorkPlanner.Core.Entities;
+﻿// ReSharper disable UnusedMember.Global
+namespace WorkPlanner.Core.Entities;
 
 public enum ShiftNumber
 {

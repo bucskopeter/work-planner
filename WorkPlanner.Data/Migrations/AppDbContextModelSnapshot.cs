@@ -33,8 +33,9 @@ namespace WorkPlanner.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("date");
 
-                    b.Property<int>("ShiftNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("ShiftNumber")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
 
                     b.Property<Guid>("WorkerId")
                         .HasColumnType("uniqueidentifier");
@@ -58,15 +59,29 @@ namespace WorkPlanner.Data.Migrations
                     b.Property<DateTime?>("Deleted")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasMaxLength(320)
+                        .HasColumnType("nvarchar(320)");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmailAddress")
+                        .IsUnique();
 
                     b.ToTable("Workers");
                 });

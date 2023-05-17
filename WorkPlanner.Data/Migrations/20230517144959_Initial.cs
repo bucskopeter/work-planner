@@ -16,8 +16,10 @@ namespace WorkPlanner.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    EmailAddress = table.Column<string>(type: "nvarchar(320)", maxLength: 320, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     DateOfBirth = table.Column<DateTime>(type: "date", nullable: true),
                     Deleted = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -33,7 +35,7 @@ namespace WorkPlanner.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "date", nullable: false),
-                    ShiftNumber = table.Column<int>(type: "int", nullable: false),
+                    ShiftNumber = table.Column<string>(type: "varchar(20)", nullable: false),
                     WorkerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -51,6 +53,12 @@ namespace WorkPlanner.Data.Migrations
                 name: "IX_Shifts_WorkerId",
                 table: "Shifts",
                 column: "WorkerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Workers_EmailAddress",
+                table: "Workers",
+                column: "EmailAddress",
+                unique: true);
         }
 
         /// <inheritdoc />

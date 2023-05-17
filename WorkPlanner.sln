@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkPlanner", "WorkPlanner\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkPlanner.Domain", "WorkPlanner.Domain\WorkPlanner.Domain.csproj", "{1E2EA666-2F1D-4C81-A94A-548A96E8CD27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkPlanner.Data", "WorkPlanner.Data\WorkPlanner.Data.csproj", "{B5E9C5CC-500A-4910-9A6D-F1D2E84D31DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkPlanner.Data", "WorkPlanner.Data\WorkPlanner.Data.csproj", "{B5E9C5CC-500A-4910-9A6D-F1D2E84D31DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkPlanner.Core", "WorkPlanner.Core\WorkPlanner.Core.csproj", "{51B6A1CA-2560-4C7B-AF0B-BB41E932A134}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkPlanner.Core", "WorkPlanner.Core\WorkPlanner.Core.csproj", "{51B6A1CA-2560-4C7B-AF0B-BB41E932A134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkPlanner.Tests", "WorkPlanner.Tests\WorkPlanner.Tests.csproj", "{F021A8BB-B49B-4270-91A7-7CCF57D1AA94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{51B6A1CA-2560-4C7B-AF0B-BB41E932A134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51B6A1CA-2560-4C7B-AF0B-BB41E932A134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51B6A1CA-2560-4C7B-AF0B-BB41E932A134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F021A8BB-B49B-4270-91A7-7CCF57D1AA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F021A8BB-B49B-4270-91A7-7CCF57D1AA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F021A8BB-B49B-4270-91A7-7CCF57D1AA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F021A8BB-B49B-4270-91A7-7CCF57D1AA94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
